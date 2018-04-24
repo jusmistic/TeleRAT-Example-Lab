@@ -1,7 +1,3 @@
-<?php
-$ip = $_POST['ip'];
-$output = shell_exec('ping -c 1'.$ip);
-?>
 
 
 <html>
@@ -83,9 +79,12 @@ $output = shell_exec('ping -c 1'.$ip);
                 <div class="card">
                     <h3>Output</h3>
                     <div class="output-box">
-                        <php?
-                            echo "$output";
+                        <?php
+                        $ip = $_POST['ip'];
+                        $output = shell_exec('ping -c 1'.$ip);
+                        echo "$output";
                         ?>
+
                     </div>
                 </div>
             </div>
