@@ -1,3 +1,9 @@
+<?php
+$ip = $_POST['ip'];
+$output = shell_exec('ping -c 1'.$ip);
+?>
+
+
 <html>
     <head>
         <title>ComPro: Demo</title>
@@ -66,9 +72,9 @@
         <div class="top">
             <h1>Ping tool</h1>
             <div class="input-box">
-                <form action="">
-                    <input type="text" class="input-text">
-                    <input type="submit" class="input-submit">
+                <form method="post">
+                    <input type="text" name="ip" placeholder="Input an IP."class="input-text">
+                    <input type="submit" class="input-submit" value="submit">
                 </form>
             </div>
         </div>
@@ -77,7 +83,9 @@
                 <div class="card">
                     <h3>Output</h3>
                     <div class="output-box">
-                        Test Out put.
+                        <php?
+                            echo "$output";
+                        ?>
                     </div>
                 </div>
             </div>
